@@ -1,17 +1,17 @@
-# 🚀 JavaScript Kod Editörü ve Sözdizimi Vurgulayıcı
+#  JavaScript Kod Editörü ve Sözdizimi Vurgulayıcı
 
 Bu proje, **JavaScript, HTML5 ve CSS** kullanılarak geliştirilmiş bir web tabanlı kod editörüdür. Canlı sözdizimi vurgulama, hata yakalama ve gerçek zamanlı geri bildirim ile kodları çalıştırmaya yarayan bir uygulamadır.
 
 ---
 
-## 🚀 Canlı Demo
+##  Canlı Demo
 
 Uygulamayı canlı olarak deneyimlemek için buraya tıklayın:  
 👉 [Canlı Demo](https://esmabilen37.github.io/js-syntax-highlighter/)
 
 ---
 
-## 🔧 Kullanılan Teknolojiler
+##  Kullanılan Teknolojiler
 
 - **JavaScript (ES6+)**  
 - **HTML5**  
@@ -19,7 +19,7 @@ Uygulamayı canlı olarak deneyimlemek için buraya tıklayın:
 
 ---
 
-## ✨ Özellikler
+##  Özellikler
 
 - Canlı sözdizimi vurgulama  
 - Lexical ve Syntax analiz  
@@ -31,7 +31,7 @@ Uygulamayı canlı olarak deneyimlemek için buraya tıklayın:
 
 ---
 
-## 🎨 Token Renkleri (Sözdizimi Vurgulama Teması)
+##  Token Renkleri (Sözdizimi Vurgulama Teması)
 
 | Token Türü               | CSS Sınıfı           | Renk Açıklaması                     | Renk Kodu                        |
 | ------------------------ | -------------------- | ----------------------------------- | -------------------------------- |
@@ -47,7 +47,7 @@ Uygulamayı canlı olarak deneyimlemek için buraya tıklayın:
 
 ---
 
-## 🖼️ Proje Görselleri
+##  Proje Görselleri
 
 ### İlk Durum  
 ![İlk Durum](./img/plilkhal.png)  
@@ -62,7 +62,7 @@ Uygulamayı canlı olarak deneyimlemek için buraya tıklayın:
 
 ---
 
-## 💻 Proje Yapısı
+##  Proje Yapısı
 
 - `index.html`  
 - `style.css`  
@@ -73,7 +73,7 @@ Uygulamayı canlı olarak deneyimlemek için buraya tıklayın:
 ---
 
 
-## 🎯 Nasıl Çalışır?
+##  Nasıl Çalışır?
 
 1. Kullanıcı kod yazmaya başlar  
 2. `LexicalAnalyzer` tokenlara ayırır  
@@ -83,7 +83,7 @@ Uygulamayı canlı olarak deneyimlemek için buraya tıklayın:
 
 ---
 
-## 🛠️ Teknik Detaylar
+##  Teknik Detaylar
 
 Uygulama, klasik bir **compiler front-end** mimarisine göre yapılandırılmıştır. Dört temel aşamada çalışır:
 
@@ -143,7 +143,7 @@ Uygulamanın nasıl çalıştığını görmek isterseniz bu videoya göz atabil
 👉 [YouTube – Tanıtım Videosu](https://www.youtube.com/watch?v=VmXFRisqO1M)
 
 ---
-## 🧠 Gramer Yapısı
+## Gramer Yapısı
 
 EBNF ile temel JavaScript grameri bu şekilde:
 
