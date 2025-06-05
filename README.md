@@ -93,9 +93,7 @@ identifier   = letter { letter | digit | "_" | "$" } ;
 number       = digit { digit } ;
 string       = '"' { any } '"' | "'" { any } "'" ;
 operator     = "+" | "-" | "*" | "/" | "%" | "==" | "!=" | ... ;
-
-
-
+---
 
 ## 🛠️ Teknik Detaylar
 
