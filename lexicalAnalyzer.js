@@ -34,7 +34,7 @@ class LexicalAnalyzer {
         this.tokens = [];
         this.errors = [];
     }
-
+ //token turlerini yazıyoruz bunları kontrol edicez cunku
     static TokenTypes = {
         KEYWORD: 'keyword',
         IDENTIFIER: 'identifier',
@@ -47,25 +47,25 @@ class LexicalAnalyzer {
         EOF: 'eof',
         ERROR: 'error'
     };
-
+//anahtar kelimeler-daha sonrasında highlight islemi uygulayacagiz.-
     static Keywords = new Set([
         'function', 'let', 'const', 'var', 'if', 'else', 'for', 'while', 
         'return', 'true', 'false', 'null', 'undefined', 'class', 'extends',
         'import', 'export', 'default', 'try', 'catch', 'finally', 'throw',
         'new', 'this', 'super', 'static', 'async', 'await', 'typeof', 'console'
     ]);
-
+//operatorler -daha sonrasında highlight islemi uygulayacagiz.-
     static Operators = new Set([
         '+', '-', '*', '/', '%', '=', '==', '===', '!=', '!==',
         '<', '>', '<=', '>=', '&&', '||', '!', '++', '--', '+=', '-=',
         '*=', '/=', '%=', '?', ':', '=>'
     ]);
-
+//belirli pozisyondaki karakteri dondurmesi icin
     peek(offset = 0) {
         const pos = this.position + offset;
         return pos < this.input.length ? this.input[pos] : '\0';
     }
-
+//pozisyondan bir sonraki pozisyona gecmek için
     advance() {
         if (this.position < this.input.length) {
             if (this.input[this.position] === '\n') {
@@ -77,13 +77,13 @@ class LexicalAnalyzer {
             this.position++;
         }
     }
-
+//boslukları atlayalım diye
     skipWhitespace() {
         while (this.position < this.input.length && /\s/.test(this.peek())) {
             this.advance();
         }
     }
-
+//string okumak icin
     readString(quote) {
         const startColumn = this.column;
         const startLine = this.line;
@@ -125,7 +125,7 @@ class LexicalAnalyzer {
             return new Token(LexicalAnalyzer.TokenTypes.ERROR, value, startLine, startColumn);
         }
     }
-
+//numara okumak icin
     readNumber() {
         const startColumn = this.column;
         let value = '';
@@ -140,7 +140,7 @@ class LexicalAnalyzer {
         
         return new Token(LexicalAnalyzer.TokenTypes.NUMBER, value, this.line, startColumn);
     }
-
+//tanimlayici okumak icin
     readIdentifier() {
         const startColumn = this.column;
         let value = '';
@@ -155,7 +155,7 @@ class LexicalAnalyzer {
             LexicalAnalyzer.TokenTypes.KEYWORD : 
             LexicalAnalyzer.TokenTypes.IDENTIFIER;
 
-        // Yanlış yazılmış anahtar kelime kontrolü (Levenshtein mesafesi ile basit kontrol)
+        // yanlış yazılmış anahtar kelime kontrolü 
         if (
             type === LexicalAnalyzer.TokenTypes.IDENTIFIER &&
             value.length > 2 // çok kısa kelimeleri kontrol etme
@@ -176,7 +176,7 @@ class LexicalAnalyzer {
 
         return new Token(type, value, this.line, startColumn);
     }
-
+//benzer kelime olunca bunu mu demek istediniz mekanizması calıssın diye bu fonksiyonu kullanıyoruz mesafe ayarlıyo iki kelime arasındaki ör: return-returw
     levenshteinDistance(a, b) {
         const dp = Array(a.length + 1).fill(null).map(() =>
             Array(b.length + 1).fill(0)
@@ -198,7 +198,7 @@ class LexicalAnalyzer {
         }
         return dp[a.length][b.length];
     }
-
+//yorum satırı okumak için
     readComment() {
         const startColumn = this.column;
         let value = '';
@@ -231,7 +231,7 @@ class LexicalAnalyzer {
         
         return new Token(LexicalAnalyzer.TokenTypes.COMMENT, value, this.line, startColumn);
     }
-
+//operator okumak için
     readOperator() {
         const startColumn = this.column;
         let value = '';
@@ -249,7 +249,7 @@ class LexicalAnalyzer {
         
         return new Token(LexicalAnalyzer.TokenTypes.OPERATOR, value, this.line, startColumn);
     }
-
+//listeyi hataları sıfırlıyoruz ilk basta pozisyonu 0a ayarlıyoruz ana token fonku
     tokenize() {
         this.tokens = [];
         this.errors = [];
