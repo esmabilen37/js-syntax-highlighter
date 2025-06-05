@@ -34,7 +34,7 @@ Uygulamayı canlı olarak deneyimlemek için buraya tıklayın:
 ![İlk Durum](./img/plilkhal.png)  
 
 ### Örnek Hatalar  
-![String Hatası](./img/plStringHatasi.png)  
+![String Hatası](./img/plStringhatasi.png)  
 ![Semicolon Hatası](./img/semicolonHatasi.png)  
 ![Parantez Hatası](./img/parantezHatasi.png)  
 
