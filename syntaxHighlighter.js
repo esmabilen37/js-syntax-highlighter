@@ -1,4 +1,4 @@
-// Syntax Highlighter ana sınıfı
+
 class SyntaxHighlighter {
     constructor() {
         this.editor = document.getElementById('editor');
@@ -45,7 +45,7 @@ class SyntaxHighlighter {
     }
 
     updateErrorList(lexicalErrors, syntaxErrors) {
-        // Satır ve mesajı aynı olanları tekilleştir
+        // iki kez hata mesajı vermesin diye bu kodu ekledim. Eklemediğim zaman iki kez aynı hatayı basmıstı.
         const seen = new Set();
         const allErrors = [...lexicalErrors, ...syntaxErrors].filter(err => {
             const key = err.line + '|' + err.message;
@@ -73,7 +73,7 @@ class SyntaxHighlighter {
     }
             
     renderParseTree(tokens) {
-        // Basit blok/parantez ağacı (örnek)
+        // parse tree olusturuyoruz basic bicimde.
         let indent = 0;
         let tree = '';
         tokens.forEach(token => {
@@ -124,13 +124,13 @@ class SyntaxHighlighter {
         for (const token of tokens) {
             if (token.type === LexicalAnalyzer.TokenTypes.EOF) continue;
 
-            // Token öncesi metin (whitespace)
+            // token öncesi metinler için -beyaz bosluklar oluyor ya-
             const tokenStart = input.indexOf(token.value, position);
             if (tokenStart > position) {
                 result += this.escapeHtml(input.substring(position, tokenStart));
             }
 
-            // Token'ı renklendir
+            // tokenı renklendirmek için 
             const tokenClass = this.getTokenClass(token);
             const tokenValue = this.escapeHtml(token.value);
             result += `<span class="${tokenClass}">${tokenValue}</span>`;
@@ -138,7 +138,7 @@ class SyntaxHighlighter {
             position = tokenStart + token.value.length;
         }
 
-        // Kalan metin
+        // kalan metin için
         if (position < input.length) {
             result += this.escapeHtml(input.substring(position));
         }
@@ -152,16 +152,16 @@ class SyntaxHighlighter {
         const lineCount = lines.length;
 
         try {
-            // Lexical analysis
+            // lexical analysis try catchle yakalıyoruz
             const lexer = new LexicalAnalyzer(code);
             const tokens = lexer.tokenize();
             const lexicalErrors = lexer.errors;
 
-            // Syntax analysis
+            // syntax analysis try catchle yakalıyoruz
             const parser = new SyntaxAnalyzer(tokens);
             const syntaxErrors = parser.parse();
 
-            // Update UI
+            // ui guncelliyoruz
             this.highlightTokens(tokens);
             this.updateLineNumbers(lineCount, [...lexicalErrors, ...syntaxErrors]);
             this.updateErrorList(lexicalErrors, syntaxErrors);
@@ -181,7 +181,7 @@ class SyntaxHighlighter {
     }
 }
 
-// Başlat - DOM yüklendiğinde
+// dom yuklendiğinde baslatmak için
 document.addEventListener('DOMContentLoaded', () => {
     new SyntaxHighlighter();
 });
