@@ -11,7 +11,7 @@ class SyntaxAnalyzer {
         this.checkSemicolonErrors(); 
         return this.errors;
     }
-
+    //basit kontroller olusturuyoruz her ide de olan
     checkBasicSyntax() {
         const stack = [];
         const brackets = {'(': ')', '[': ']', '{': '}'};
@@ -39,7 +39,7 @@ class SyntaxAnalyzer {
             }
         }
         
-        // Kapanmamış parantezler
+        // Kapanmamış parantezler için hata olusturuyoruz
         while (stack.length > 0) {
             const unclosed = stack.pop();
             this.errors.push({
@@ -69,9 +69,9 @@ class SyntaxAnalyzer {
                     }
                     j++;
                 }
-                if (hasBlockStart) continue; // Blok başlıyorsa ; bekleme
+                if (hasBlockStart) continue; // Blok başlıyorsa devam et diye
 
-                // Satırın sonunda noktalı virgül var mı?
+                // Satırın sonunda noktalı virgül var mı diye kontrol ediyoruz
                 let foundSemicolon = false;
                 j = i + 1;
                 while (j < this.tokens.length) {
