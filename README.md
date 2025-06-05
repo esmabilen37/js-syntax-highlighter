@@ -140,7 +140,7 @@ Uygulamanın geliştirilme süreci ve teknik detayları hakkında yazdığım Me
 ## 📽️ Tanıtım Videosu
 
 Uygulamanın nasıl çalıştığını görmek isterseniz bu videoya göz atabilirsiniz:  
-👉 [YouTube – Tanıtım Videosu](https://www.youtube.com/watch?v=uIf9hvbB5gs)
+👉 [YouTube – Tanıtım Videosu](https://www.youtube.com/watch?v=VmXFRisqO1M)
 
 ---
 ## 🧠 Gramer Yapısı
