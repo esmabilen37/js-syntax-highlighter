@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Syntax Highlighter & Parser</title>
     <style>
+       
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+         //sayfa arka planı ve yazı tipini olusturmak için kodlar
         body {
             font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
             background: #1e1e1e;
@@ -19,7 +20,7 @@
             display: flex;
             flex-direction: column;
         }
-
+        //baslıkların nasıl gorunmesi gerektigi ile ilgili kodlar
         .header {
             background: #2d2d30;
             padding: 10px 20px;
@@ -30,7 +31,7 @@
             color: #ffffff;
             font-size: 18px;
         }
-
+        //ana kısmın ve editor kısmının nasıl gorunmesi gerektigi ile ilgili kodlar
         .main-container {
             display: flex;
             flex: 1;
@@ -69,7 +70,7 @@
             align-items: center;
             justify-content: flex-end;
         }
-
+        //satırda hataların nasıl gorunmesi gerektigi
         .error-indicator {
             position: absolute;
             right: -15px;
@@ -90,7 +91,7 @@
             flex: 1;
             position: relative;
         }
-
+        //kodu yazacagimiz yer
         .editor {
             position: absolute;
             top: 0;
@@ -122,7 +123,7 @@
             font-family: inherit;
             color: #d4d4d4;
         }
-
+        //hata panelleri
         .error-panel {
             background: #1e1e1e;
             border-top: 1px solid #3e3e42;
