@@ -79,8 +79,9 @@ Kod editöründe kullanılan sözdizimi vurgulama renkleri:
 ---
 ## 🧠 Gramer Yapısı
 
-EBNF ile temel JavaScript grameri :
+Aşağıda sadeleştirilmiş JavaScript EBNF grameri:
 
+```ebnf
 program      = { statement } ;
 statement    = varDecl | funcDecl | exprStmt ;
 varDecl      = ("let" | "const" | "var") identifier "=" expression ";" ;
@@ -92,6 +93,7 @@ identifier   = letter { letter | digit | "_" | "$" } ;
 number       = digit { digit } ;
 string       = '"' { any } '"' | "'" { any } "'" ;
 operator     = "+" | "-" | "*" | "/" | "%" | "==" | "!=" | ... ;
+
 
 
 
