@@ -30,17 +30,16 @@ Uygulamayı canlı olarak deneyimlemek için buraya tıklayın:
 ---
 
 ## 🖼️ Proje Görselleri
-
 ### İlk Durum  
-![İlk Durum](./images/plilkhal.png)  
+![İlk Durum](./img/plilkhal.png)  
 
 ### Örnek Hatalar  
-![String Hatası](./images/plStringHatasi.png)  
-![Semicolon Hatası](./images/semicolonHatasi.png)  
-![Parantez Hatası](./images/parantezHatasi.png)  
+![String Hatası](./img/plStringHatasi.png)  
+![Semicolon Hatası](./img/semicolonHatasi.png)  
+![Parantez Hatası](./img/parantezHatasi.png)  
 
 ### Tahmin Etme Mekanizması  
-![Tahmin Etme](./images/tahminEtme.png)  
+![Tahmin Etme](./img/tahminEtme.png)
 
 ---
 
